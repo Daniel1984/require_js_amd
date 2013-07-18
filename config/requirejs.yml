@@ -1,0 +1,23 @@
+paths:
+  jquery: 'lib/jquery'
+  underscore: 'lib/underscore'
+  backbone: 'lib/backbone'
+
+modules:
+  - name: 'application'
+  - name: 'widgets/first/main'
+    exclude: ['application']
+  - name: 'widgets/second/main'
+    exclude: ['application']
+
+priority: ['application']
+
+enforceDefine: true
+
+shim:
+  underscore:
+    exports: '_'
+  backbone:
+    deps: ['underscore', 'jquery']
+    exports: 'Backbone'
+
